@@ -1,0 +1,62 @@
+spring:
+  application:
+    name: UserService
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  devtools:
+    restart:
+      enabled: true
+      log-condition-evaluation-delta: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/cph_db
+    username: root
+    password: BD28@krhps
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+#    username: kiransayankar091@gmail.com
+#    password: sxcg puqx bogu ahjv
+    username: paysphereapp@gmail.com
+    password: fvbn wjma wvbm gifz
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret: myJwtSecretKey
+  expiration: 3600000
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
+file:
+  upload-dir: uploads/users
