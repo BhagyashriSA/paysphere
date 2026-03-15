@@ -33,8 +33,6 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-#    username: kiransayankar091@gmail.com
-#    password: sxcg puqx bogu ahjv
     username: paysphereapp@gmail.com
     password: fvbn wjma wvbm gifz
     properties:
