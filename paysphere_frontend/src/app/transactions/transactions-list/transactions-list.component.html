@@ -1,0 +1,119 @@
+<div class="transaction-container">
+
+    <!-- Page Title -->
+  <h2 class="page-title">Transaction List</h2>
+
+    <!-- Filters Section -->
+  <div class="filter-card">
+    <div class="filter-row">
+
+      <!-- Transaction ID -->
+      <div class="filter-group">
+        <!-- <label>Transaction ID:</label> -->
+        <input
+          type="text"
+          placeholder="Enter Transaction ID"
+          [(ngModel)]="transactionIdFilter"
+        />
+      </div>
+
+            <!-- Transaction Type -->
+      <div class="filter-group">
+        <select [(ngModel)]="transactionTypeFilter">
+          <option value="">All Types</option>
+          <option value="CREDIT">CREDIT</option>
+          <option value="DEBIT">DEBIT</option>
+        </select>
+      </div>
+
+        <!-- Channel -->
+      <div class="filter-group">
+        <select [(ngModel)]="channelFilter">
+          <option value="">All Channels</option>
+          <option value="UPI">UPI</option>
+          <option value="IMPS">IMPS</option>
+          <option value="NEFT">NEFT</option>
+          <option value="CARD">CARD</option>
+          <option value="NETBANK">NETBANK</option>
+          <option value="WALLET">WALLET</option>
+        </select>
+      </div>
+
+            <!-- Buttons -->
+      <div class="filter-actions">
+        <button class="btn-primary" (click)="search()">Filter</button>
+        <button class="btn-secondary" (click)="clear()">Clear</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Table -->
+  <div class="table-card">
+    <table class="transaction-table">
+    <thead>
+  <tr>
+    <th>Transactions ID </th>
+    <th>Transactions Type </th>
+    <th>Channel </th>
+    <th>Amount </th>
+    <th>Status </th>
+    <th>Date and Time </th>
+  </tr>
+</thead>
+  <tbody>
+  <tr *ngFor="let txn of transactions">
+    <td>{{txn.transactionId}}</td>
+    <td>{{txn.transactionType}}</td>
+    <td>{{txn.channel}}</td>
+    <td>{{txn.amount}}</td>
+    <td>
+      <span
+        class="status-badge"
+        [ngClass]="{
+          'success': txn.status === 'SUCCESS',
+          'pending': txn.status === 'PENDING',
+          'failed': txn.status === 'FAILED'
+        }">
+        {{ txn.status }}
+      </span>
+    </td>
+
+    <td>{{ txn.transactionDateTime | date:'yyyy-MM-dd HH:mm' }}</td>
+  </tr>
+
+    <tr *ngIf="transactions.length === 0">
+    <td colspan="6" class="no-data">
+      No transactions found
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+ <!-- Pagination -->
+  <div class="pagination-bar">
+    <span>
+      Showing {{ page * size + 1 }} to
+      {{ (page * size + transactions.length) }} of {{ totalElements }} entries
+    </span>
+
+    <div class="pagination-buttons">
+      <button (click)="previousPage()" [disabled]="page === 0">
+        Previous
+      </button>
+
+      <button
+        *ngFor="let p of totalPagesArray; let i = index"
+        (click)="goToPage(i)"
+        [class.active]="page === i">
+        {{ i + 1 }}
+      </button>
+
+      <button (click)="nextPage()" [disabled]="page === totalPages - 1">
+        Next
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.footer {
+  background-color: #0a1bff;
+  color: #ffffff;
+  text-align: center;
+
+  padding: 6px 0;        /* reduced height */
+  font-size: 13px;
+
+  position: relative;   /* ✅ NOT fixed */
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;             /* ✅ removes extra space */
+  line-height: 1.4;
+}

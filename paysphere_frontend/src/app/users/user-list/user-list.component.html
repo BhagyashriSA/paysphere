@@ -1,0 +1,190 @@
+<div class="user-container">
+
+  <!-- Page Title -->
+  <h2 class="page-title">Users List</h2>
+
+  <!-- Filters Section -->
+  <div class="filter-card">
+    <div class="filter-row">
+
+      <!-- User ID -->
+      <div class="filter-group">
+        <!-- <label>user ID:</label> -->
+        <input type="text" placeholder="Enter Username" [(ngModel)]="usernameFilter" />
+      </div>
+
+      <!-- Role -->
+      <div class="filter-group">
+        <select [(ngModel)]="roleFilter">
+          <option value="">All Types</option>
+          <option value="ADMIN">ADMIN</option>
+          <option value="USER">USER</option>
+          <option value="HR">HR</option>
+        </select>
+      </div>
+
+      <!-- Status -->
+      <div class="filter-group">
+        <select [(ngModel)]="statusFilter">
+          <option value="">All Types</option>
+          <option value="ACTIVE">ACTIVE</option>
+          <option value="INACTIVE">INACTIVE</option>
+        </select>
+      </div>
+
+
+      <!-- Buttons -->
+      <div class="filter-actions">
+        <button class="btn-primary" (click)="search()">Filter</button>
+        <button class="btn-secondary" (click)="clear()">Clear</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Table -->
+  <div class="table-card">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Username </th>
+          <th> Fullname </th>
+          <th>Role </th>
+          <th>Status </th>
+          <th>Created At </th>
+          <th>Updated At </th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of user">
+          <td>{{user.username}}</td>
+          <td>{{user.fullName}}</td>
+          <td>
+            <span class="role-badge" [ngClass]="{
+          'admin': user.role === 'ADMIN',
+          'user': user.role === 'USER',
+           'hr': user.role === 'HR'
+        }">
+              {{ user.role }}
+            </span>
+          </td>
+
+          <td>
+            <!-- <span
+        class="status-badge"
+        [ngClass]="{
+          'active': user.status === 'ACTIVE',
+          'inactive': user.status === 'INACTIVE'
+        }">
+        {{ user.status }}
+      </span> -->
+            <span class="status-badge" [ngClass]="user.status === 'ACTIVE' ? 'active' : 'inactive'">
+
+              {{ user.status === 'ACTIVE' ? '🟢 Active' : '🔴 Inactive' }}
+
+            </span>
+          </td>
+
+          <td>{{ user.createdAt | date:'yyyy-MM-dd HH:mm' }}</td>
+          <td>{{ user.updatedAt | date:'yyyy-MM-dd HH:mm' }}</td>
+
+          <td class="action-buttons">
+
+            <i class="fa fa-eye view-icon" (click)="viewUser(user.id)"></i>
+
+            <i class="fa fa-pen edit-icon" (click)="editUser(user.id)"></i>
+
+            <i class="fa fa-trash delete-icon" (click)="deleteUser(user.id)"></i>
+
+          </td>
+        </tr>
+
+        <tr *ngIf="user.length === 0">
+          <td colspan="6" class="no-data">
+            No user found
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination-bar">
+    <span>
+      Showing {{ page * size + 1 }} to
+      {{ (page * size + user.length) }} of {{ totalElements }} entries
+    </span>
+
+    <div class="pagination-buttons">
+      <button (click)="previousPage()" [disabled]="page === 0">
+        Previous
+      </button>
+
+      <button *ngFor="let p of totalPagesArray; let i = index" (click)="goToPage(i)" [class.active]="page === i">
+        {{ i + 1 }}
+      </button>
+
+      <button (click)="nextPage()" [disabled]="page === totalPages - 1">
+        Next
+      </button>
+    </div>
+  </div>
+
+  <!-- USER VIEW MODAL -->
+<div class="modal-overlay" *ngIf="showUserModal">
+
+  <div class="modal-container">
+
+    <div class="modal-header">
+      <h3>User Details</h3>
+      <span class="close-icon" (click)="closeUserModal()">✖</span>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="detail-row">
+        <label>Username</label>
+        <span>{{selectedUser?.username}}</span>
+      </div>
+
+      <div class="detail-row">
+        <label>Full Name</label>
+        <span>{{selectedUser?.fullName}}</span>
+      </div>
+
+      <div class="detail-row">
+        <label>Role</label>
+        <span class="role-badge">{{selectedUser?.role}}</span>
+      </div>
+
+      <div class="detail-row">
+        <label>Status</label>
+        <span class="status-badge"
+        [ngClass]="selectedUser?.status === 'ACTIVE' ? 'active' : 'inactive'">
+        {{selectedUser?.status}}
+        </span>
+      </div>
+
+      <div class="detail-row">
+        <label>Created At</label>
+        <span>{{selectedUser?.createdAt | date:'yyyy-MM-dd HH:mm'}}</span>
+      </div>
+
+      <div class="detail-row">
+        <label>Updated At</label>
+        <span>{{selectedUser?.updatedAt | date:'yyyy-MM-dd HH:mm'}}</span>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-close" (click)="closeUserModal()">OK</button>
+    </div>
+
+  </div>
+
+</div>
+</div>

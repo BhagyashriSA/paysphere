@@ -1,0 +1,280 @@
+.user-container {
+  max-width: 1100px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.page-title {
+  margin-bottom: 2px;
+  margin-top: 16px;
+  font-size: x-large;
+}
+
+.filter-card {
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-size: 12px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;   /* 👈 keeps everything in ONE ROW */
+}
+
+.filter-group input,
+.filter-group select {
+  height: 36px;
+  padding: 0 10px;
+  min-width: 180px;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-primary {
+  height: 36px;
+  padding: 0 14px;
+}
+
+.btn-secondary {
+  height: 36px;
+  padding: 0 14px;
+}
+.table-card {
+  background: #fff;
+  border-radius: 8px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;  
+}
+
+.user-table th,
+.user-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+ .role-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: white;
+} 
+
+/* .active { background: green; }
+.inactive { background: orange; }  */
+
+.admin { background: #1976d2; }
+.user { background: #6c757d; }
+.hr { background: #9c27b0; }
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.active {
+  background-color: ;
+  color: #155724;
+}
+
+.inactive {
+  background-color: ;
+  color: #721c24;
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+}
+
+.pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 13px;  
+}
+
+.pagination-buttons button {
+  margin: 0 4px;
+  padding: 4px 10px;
+   font-size: 13px;  
+}
+
+.pagination-buttons .active {
+  background: #1976d2;
+  color: white;
+}
+
+
+/* THEAD STYLE */
+.user-table thead {
+  background-color: #e1e5ea;   /* slightly darker than light gray */
+}
+
+.action-buttons i {
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* View icon */
+.view-icon {
+  color: #3498db;
+}
+
+/* Edit icon */
+.edit-icon {
+  color: #f39c12;
+}
+
+/* Delete icon */
+.delete-icon {
+  color: #e74c3c;
+}
+
+.action-buttons i:hover {
+  opacity: 0.7;
+}
+
+/* Modal Overlay */
+.modal-overlay{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.45);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+/* Modal Container */
+.modal-container{
+  background:#ffffff;
+  width:420px;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.25);
+  overflow:hidden;
+  animation:modalFade 0.3s ease;
+}
+
+/* Header */
+.modal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 20px;
+  border-bottom:1px solid #eee;
+}
+
+.modal-header h3{
+  margin:0;
+  font-size:20px;
+  font-weight:600;
+}
+
+/* Close Icon */
+.close-icon{
+  cursor:pointer;
+  font-size:18px;
+  color:#888;
+}
+
+.close-icon:hover{
+  color:#000;
+}
+
+/* Body */
+.modal-body{
+  padding:20px;
+}
+
+/* Detail Row */
+.detail-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px 0;
+  border-bottom:1px solid #f1f1f1;
+}
+
+.detail-row label{
+  font-weight:600;
+  color:#444;
+}
+
+/* Role Badge */
+.role-badge{
+  background:#e3f2fd;
+  color:#1565c0;
+  padding:4px 10px;
+  border-radius:15px;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* Status Badge */
+.status-badge{
+  padding:4px 10px;
+  border-radius:15px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.active{
+  background:#e8f5e9;
+  color:#2e7d32;
+}
+
+.inactive{
+  background:#ffebee;
+  color:#c62828;
+}
+
+/* Footer */
+.modal-footer{
+  padding:15px;
+  text-align:right;
+  border-top:1px solid #eee;
+}
+
+/* Close Button */
+.btn-close{
+  padding:8px 18px;
+  border:none;
+  border-radius:6px;
+  background:#1976d2;
+  color:white;
+  font-weight:500;
+  cursor:pointer;
+}
+
+.btn-close:hover{
+  background:#1259a7;
+}
+
+/* Animation */
+@keyframes modalFade{
+  from{
+    transform:translateY(-20px);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}

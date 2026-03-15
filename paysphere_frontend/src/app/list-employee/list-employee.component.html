@@ -1,0 +1,38 @@
+<div style="max-height: 300px; max-width: 100%; overflow: auto; border: 1px solid #ddd;">
+<table class="table table-striped" style="min-width: 700px;">
+    <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Department</th>
+    <th>Salary</th>
+    <th>Action</th>
+  </tr>
+</thead>
+  <tbody>
+  <tr *ngFor="let emp of employees">
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.email }}</td>
+    <td>{{ emp.department }}</td>
+    <td>{{ emp.salary }}</td>
+    <td>
+<i class="fa fa-pen text-info action-icon me-3"
+   title="Update"
+   (click)="updateEmployee(emp.id!)">
+</i>
+
+<i class="fa fa-trash text-danger action-icon me-3"
+   title="Delete"
+   (click)="deleteEmployee(emp.id!)">
+</i>
+
+<i class="fa fa-eye text-secondary action-icon"
+   title="View"
+   (click)="viewEmployee(emp.id!)">
+</i>
+</td>
+  </tr>
+</tbody>
+</table>
+</div>
+

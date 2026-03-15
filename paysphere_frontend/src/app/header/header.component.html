@@ -1,0 +1,55 @@
+<header class="app-header">
+  <div class="left-section">
+    <img src="assets/images/abc.png" alt="Logo" class="logo" />
+    <!-- <span class="app-title">PayHere</span> -->
+  </div>
+
+  <nav class="nav-menu">
+   <div class="menu-item">
+     <a class="menu-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a></div>
+        <!-- <a routerLink="/reports" routerLinkActive="active">Reports</a>  -->
+
+          <!-- USERS MENU -->
+  <div class="menu-item"
+       (mouseenter)="openUsers()"
+       (mouseleave)="closeUsers()">
+    <a class="menu-link" (click)="toggleUsers()">
+      Users
+    </a>
+    <!-- SUBMENU -->
+    <div class="submenu" *ngIf="showUsers">
+      <a routerLink="/users/create" routerLinkActive="active">
+        Create User
+      </a>
+      <a routerLink="/users/list" routerLinkActive="active">
+        User List
+      </a>
+      <a routerLink="/users/view" routerLinkActive="active">
+        View User
+      </a>
+      <a routerLink="/users/edit" routerLinkActive="active">
+        Edit User
+      </a>
+      <a routerLink="/users/action" routerLinkActive="active">
+        Disable User
+      </a>
+    </div>
+  </div>
+   <div class="menu-item">
+     <!-- <a routerLink="/reports" routerLinkActive="active">Reports</a></div>
+        <div class="menu-item"> -->
+     <a routerLink="/transactions" routerLinkActive="active">Transactions</a></div>
+        <div class="menu-item">
+       <a routerLink="/reports" routerLinkActive="active">Reports</a></div>
+        <div class="menu-item">
+     <a routerLink="/settings" routerLinkActive="active">Settings</a></div>
+
+  </nav>
+
+  <div class="right-section" *ngIf="isLoggedIn">
+    <span class="username">
+      Welcome, <strong>{{ username }}</strong>
+    </span>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+</header>

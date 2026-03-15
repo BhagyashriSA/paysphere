@@ -1,0 +1,117 @@
+.app-header {
+  height: 64px;
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 160px;
+  width: 160px: 
+  margin-right: 10px;
+  margin-top: 7px;
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}
+
+ .nav-menu a {
+  display: inline-flex;   /* 🔑 THIS FIXES IT */
+  text-decoration: none;
+  align-items: center;
+  margin: 0 12px;
+  gap: 24px;
+  color: #dbeafe;
+  font-size: 15px;
+} 
+
+ /* .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 20px;
+  text-decoration: none;
+  background: linear-gradient(to bottom, #0f2a35, #0b1f29);
+} */
+
+/* hover text */
+.nav-menu a:hover {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-right: 16px;
+  font-size: 14px;
+}
+
+.logout-btn {
+  background-color: #ef4444;
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+}
+
+/* USERS MENU */
+.menu-item {
+  position: relative;
+  align-items: center;
+}
+
+.menu-link {
+  cursor: pointer;
+}
+
+/* SUBMENU */
+.submenu {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  background: #0f172a;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
+.submenu a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+/* HOVER EFFECT */
+.submenu a:hover {
+  background: #1e293b;
+}
+
