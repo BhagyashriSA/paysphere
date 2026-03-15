@@ -187,52 +187,5 @@ public class UserServiceImpl implements UserInf {
         userRepository.save(user);
     }
 
-//    @Override
-//    public List<User> getAllUsers() {
-//        return userRepository.findAll();
-//    }
-
-//    public void sendResetEmail(String toEmail, String resetLink) throws Exception {
-//
-//        MimeMessage message = mailSender.createMimeMessage();
-//        MimeMessageHelper helper = new MimeMessageHelper(message, true);
-//
-////        helper.setTo("bhagyashrisay@gmail.com");
-//        helper.setTo(toEmail);
-//        helper.setSubject("Reset Your Password");
-//
-//        String htmlContent = """
-//        <div style="font-family:Arial,sans-serif;padding:20px">
-//            <h2 style="color:#333;">Reset Your Password</h2>
-//
-//            <p>Hello,</p>
-//
-//            <p>You requested to reset your password. Click the button below to reset it.</p>
-//
-//            <a href="%s"
-//               style="display:inline-block;padding:12px 20px;
-//               background-color:#4CAF50;color:white;
-//               text-decoration:none;border-radius:5px;
-//               font-weight:bold;">
-//               Reset Password
-//            </a>
-//
-//            <p style="margin-top:20px;">This link will expire in <b>30 minutes</b>.</p>
-//
-//            <p>If you did not request this, please ignore this email.</p>
-//
-//            <hr>
-//            <p style="font-size:12px;color:gray;">
-//                © 2026 PaySphere
-//            </p>
-//        </div>
-//        """.formatted(resetLink);
-//
-//        helper.setText(htmlContent, true);
-//
-//        mailSender.send(message);
-//    }
-
-
 
 }
