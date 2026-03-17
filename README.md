@@ -90,6 +90,8 @@ Database (MySQL)
 | POST | /auth/forgot-password | Send reset password link to email |
 | POST | /auth/reset-password | Reset password using token |
 
+---
+
 ### 👤 User Management APIs
 
 | Method | Endpoint | Description |
