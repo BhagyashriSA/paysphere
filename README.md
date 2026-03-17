@@ -175,9 +175,10 @@ Kafka event streaming
 Real-time notifications
 Cloud deployment (AWS / Docker)
 
-👩‍💻 Author
+## 👩‍💻 Author
 
-Bhagyashri Sayankar
-Java Backend Developer
+**Bhagyashri Sayankar**  
+💼 Java Backend Developer  
+🚀 Skills: Java, Spring Boot, Hibernate, Angular  
 Java Backend Developer
 Skills: Java, Spring Boot, Hibernate, Angular,
