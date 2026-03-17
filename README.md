@@ -76,7 +76,7 @@ Repository Layer (JPA/Hibernate)
 ▼
 MySQL Database
 
-## Screenshots
+## 📸 Screenshots
 
 ### Login Page
 ![Login Page](images/login_page.png)
