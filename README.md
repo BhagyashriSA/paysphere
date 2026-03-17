@@ -179,7 +179,5 @@ Cloud deployment (AWS / Docker)
 
 Bhagyashri Sayankar
 Java Backend Developer
-
-Skills: Java, Spring Boot, Hibernate, Angular
 Java Backend Developer
 Skills: Java, Spring Boot, Hibernate, Angular,
