@@ -62,6 +62,9 @@ Database (MySQL)
 ### Login Page
 ![Login Page](images/login_page.png)
 
+### Transaction List
+![Transaction List](images/transaction_list.png)
+
 ### User List
 ![User List](images/User_list.png)
 
@@ -76,9 +79,6 @@ Database (MySQL)
 
 ### Reset Password
 ![Reset Password](images/reset_password.png)
-
-### Transaction List
-![Transaction List](images/transaction_list.png)
 
 API Endpoints
 Create Transaction
