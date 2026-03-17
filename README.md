@@ -80,10 +80,6 @@ Application run on
 http://localhost:4200
 
 Future Enhancements
-Future Enhancements
-Future Enhancements
-
-Future Enhancements
 Payment gateway integration
 Microservices architecture
 Kafka event streaming
