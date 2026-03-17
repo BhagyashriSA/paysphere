@@ -57,19 +57,24 @@ This project demonstrates full-stack development using **Spring Boot (Backend)**
 - Global Exception Handling  
 
 ---
-System Architecture
+## 🏗️ System Architecture
+
 Angular Frontend
-        |
-        |
+│
+▼
 REST API Communication
-        |
+│
+▼
 Spring Boot Backend
-        |
+│
+▼
 Service Layer (Business Logic)
-        |
+│
+▼
 Repository Layer (JPA/Hibernate)
-        |
-Database (MySQL)
+│
+▼
+MySQL Database
 
 ## Screenshots
 
