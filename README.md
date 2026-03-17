@@ -1,48 +1,62 @@
-PaySphere – Payment & Transaction Management System
-Project Overview
-PaySphere is a secure payment and transaction management system designed to handle financial transactions between users. The system allows users to create transactions, view transaction history, manage accounts, and generate transaction reports.
-This project demonstrates the implementation of full-stack development using Java Spring Boot and Angular.
+# 💳 PaySphere – Payment & Transaction Management System
 
-Technologies Used
-Backend
-•	Java 8
-•	Spring Boot
-•	Spring Data JPA / Hibernate
-•	REST APIs
-•	MySQL  Database
-Frontend
-•	Angular 18
-•	HTML5
-•	CSS3
-•	Bootstrap / Angular Material
-Tools
-•	IntelliJ IDEA
-•	GitHub
-•	Maven
-•	Postman
+## 📌 Project Overview
+PaySphere is a secure payment and transaction management system designed to handle financial transactions between users.  
+It enables users to create transactions, manage accounts, and generate reports efficiently.
 
-Features
-User Management
-•	User registration
-•	Login authentication
-•	Forgot password functionality
-•	Role-based access
-Transaction Management
-•	Create transaction
-•	Update transaction
-•	View transaction details
-•	Delete transaction
-•	Transaction history
-Reports
-•	Transaction reports
-•	Export reports in PDF
-•	Export reports in Excel
-•	Filter by date and status
-Security
-•	JWT authentication
-•	Input validation
-•	Global exception handling
+This project demonstrates full-stack development using **Spring Boot (Backend)** and **Angular (Frontend)**.
 
+---
+
+## 🚀 Technologies Used
+
+### 🔙 Backend
+- Java 8  
+- Spring Boot  
+- Spring Data JPA / Hibernate  
+- REST APIs  
+- MySQL Database  
+
+### 🎨 Frontend
+- Angular 18  
+- HTML5  
+- CSS3  
+- Bootstrap / Angular Material  
+
+### 🛠️ Tools
+- IntelliJ IDEA  
+- Maven  
+- Postman  
+- Git & GitHub  
+
+---
+
+## ✨ Features
+
+### 👤 User Management
+- User Registration  
+- Login Authentication  
+- Forgot Password  
+- Role-Based Access  
+
+### 💳 Transaction Management
+- Create Transaction  
+- Update Transaction  
+- View Transaction Details  
+- Delete Transaction  
+- Transaction History  
+
+### 📊 Reports
+- Transaction Reports  
+- Export to PDF & Excel  
+- Filter by Date & Status  
+
+### 🔐 Security
+- JWT Authentication  
+- Input Validation  
+- Global Exception Handling  
+
+---
 System Architecture
 Angular Frontend
         |
