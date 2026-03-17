@@ -78,25 +78,25 @@ MySQL Database
 
 ## 📸 Screenshots
 
-### Login Page
+### 🔐 Login Page
 ![Login Page](images/login_page.png)
 
-### Transaction List
+### 💳 Transaction Listt
 ![Transaction List](images/transaction_list.png)
 
-### User List
+### 👥 User List
 ![User List](images/User_list.png)
 
-### Create User
+### ➕ Create User
 ![Create User](images/create_user.png)
 
-### Update User
+### ✏️ Update User
 ![Update User](images/update_user.png)
 
-### Forgot Password
+### 🔑 Forgot Password
 ![Forgot Password](images/forgot_password.png)
 
-### Reset Password
+### 🔁 Reset Password
 ![Reset Password](images/reset_password.png)
 
 ## 📡 API Endpoints
