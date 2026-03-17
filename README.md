@@ -157,9 +157,10 @@ MySQL Database
 ### 🔙 Backend
 Clone repository
 git clone https://github.com/yourusername/paysphere.git
-Open project in IntelliJ / STS
+Open the project in IntelliJ / STS
 Configure database in application.properties
 Run Spring Boot application
+
 Frontend
 Navigate to Angular project
 cd paysphere-frontend
