@@ -153,8 +153,8 @@ MySQL Database
 ---
 
 
-How to Run the Project
-Backend
+## ▶️ How to Run the Project
+### 🔙 Backend
 Clone repository
 git clone https://github.com/yourusername/paysphere.git
 Open project in IntelliJ / STS
@@ -168,7 +168,7 @@ npm install
 Application run on
 http://localhost:4200
 
-Future Enhancements
+🔮 Future Enhancements
 Payment gateway integration
 Microservices architecture
 Kafka event streaming
