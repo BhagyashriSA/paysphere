@@ -90,6 +90,26 @@ Database (MySQL)
 | POST | /auth/forgot-password | Send reset password link to email |
 | POST | /auth/reset-password | Reset password using token |
 
+### 👤 User Management APIs
+
+| Method | Endpoint | Description |
+|--------|---------|------------|
+| POST | /api/users/create | Create new user (with photo upload) |
+| GET | /api/users | Get all users (with pagination & filters) |
+| GET | /api/users/{id} | Get user by ID |
+| PUT | /api/users/{id} | Update user (with photo upload) |
+| DELETE | /api/users/{id} | Delete user |
+---
+
+### 🔍 Query Parameters (GET /api/users)
+
+| Parameter | Type | Description |
+|----------|------|------------|
+| page | int | Page number (default: 0) |
+| size | int | Page size (default: 5) |
+| username | String | Filter by username |
+| role | String | Filter by role |
+| status | String | Filter by status |
 
 
 How to Run the Project
