@@ -80,9 +80,74 @@ Database (MySQL)
 ### Reset Password
 ![Reset Password](images/reset_password.png)
 
-API Endpoints
-Create Transaction
-POST /api/transactions
+## 📡 API Endpoints
+
+### 🔐 Authentication APIs
+
+| Method | Endpoint | Description |
+|--------|---------|------------|
+| POST | /auth/login | Authenticate user and return JWT token |
+| POST | /auth/forgot-password | Send reset password link to email |
+| POST | /auth/reset-password | Reset password using token |
+
+---
+
+### 🔑 Request & Response Examples
+
+#### 🔐 Login API
+**POST /auth/login**
+
+**Request Body**
+```json
+{
+  "username": "testuser",
+  "password": "123456"
+}
+
+Response
+
+{
+  "token": "JWT_TOKEN_HERE"
+}
+📧 Forgot Password
+
+POST /auth/forgot-password
+
+Request Body
+
+{
+  "email": "user@example.com"
+}
+
+Success Response
+
+{
+  "status": "success",
+  "message": "Reset password link sent to email"
+}
+
+Error Response
+
+{
+  "status": "error",
+  "message": "Email is required"
+}
+🔁 Reset Password
+
+POST /auth/reset-password
+
+Request Body
+
+{
+  "token": "reset_token_here",
+  "password": "newPassword123"
+}
+
+Response
+
+{
+  "message": "Password updated successfully"
+}
 
 How to Run the Project
 Backend
