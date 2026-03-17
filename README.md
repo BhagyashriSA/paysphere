@@ -99,7 +99,6 @@ Database (MySQL)
 | GET | /api/users/{id} | Get user by ID |
 | PUT | /api/users/{id} | Update user (with photo upload) |
 | DELETE | /api/users/{id} | Delete user |
----
 
 ### 🔍 Query Parameters (GET /api/users)
 
@@ -110,6 +109,27 @@ Database (MySQL)
 | username | String | Filter by username |
 | role | String | Filter by role |
 | status | String | Filter by status |
+
+---
+
+### 💳 Transaction APIs
+
+| Method | Endpoint | Description |
+|--------|---------|------------|
+| GET | /api/transactions | Get all transactions (with pagination & filters) |
+
+
+### 🔍 Query Parameters (GET /api/transactions)
+
+| Parameter | Type | Description |
+|----------|------|------------|
+| page | int | Page number (default: 0) |
+| size | int | Page size (default: 5) |
+| transactionId | String | Filter by transaction ID |
+| transactionType | String | Filter by type (CREDIT/DEBIT) |
+| channel | String | Filter by channel (UPI/CARD/etc.) |
+
+---
 
 
 How to Run the Project
