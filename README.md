@@ -156,7 +156,7 @@ MySQL Database
 ## ▶️ How to Run the Project
 ### 🔙 Backend
 Clone repository
-git clone https://github.com/yourusername/paysphere.git
+git clone https://github.com/BhagyashriSA/paysphere.git
 Open the project in IntelliJ / STS
 Configure database in application.properties
 Run Spring Boot application
