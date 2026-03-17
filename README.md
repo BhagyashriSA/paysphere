@@ -88,7 +88,6 @@ Cloud deployment (AWS / Docker)
 
 Author
 Bhagyashri Sayankar
-Java Backend Developer
 
 Java Backend Developer
 Skills: Java, Spring Boot, Hibernate, Angular,
