@@ -166,6 +166,7 @@ Navigate to Angular project
 cd paysphere-frontend
 Install dependencies
 npm install
+ng serve
 Application run on
 http://localhost:4200
 
