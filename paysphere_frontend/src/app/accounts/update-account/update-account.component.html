@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="card">
+    <h2>Update Bank Account</h2>
+
+    <form [formGroup]="accountForm" (ngSubmit)="submit()">
+      <div class="grid">
+
+        <div class="form-group">
+          <label>Account Holder Name</label>
+          <input type="text" formControlName="accountHolderName" #nameInput
+            ( placeholder="Type name..." />
+
+          <!-- Suggestions dropdown -->
+          <ul *ngIf="customers.length > 0" class="dropdown">
+            <li *ngFor="let c of customers" (click)="selectCustomer(c)">
+              {{ c.fullName }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-group">
+          <label>CIF</label>
+          <input type="text" formControlName="customerId" readonly class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>Account Number</label>
+          <input type="text" formControlName="accountNumber" readonly class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>Account Type</label>
+          <select formControlName="accountType">
+            <option value="">Select</option>
+            <option value="SAVINGS">SAVINGS</option>
+            <option value="CURRENT">CURRENT</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>State</label>
+           <select formControlName="state" (change)="onStateChange($event)">
+            <option value="">Select State</option>
+            <option *ngFor="let s of states" [value]="s">{{ s }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>City</label>
+          <select formControlName="city" (change)="onCityChange($event)">
+              <option value="">Select</option>
+            <option *ngFor="let c of cities" [value]="c">
+              {{ c }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Branch</label>
+          <select formControlName="branchId" (change)="onCityBranch($event)">
+            <option value="">Select</option>
+            <option *ngFor="let b of branch" [ngValue]="b">
+              {{ b.branchName }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>IFSC Code</label>
+          <input type="text" formControlName="ifscCode" readonly class="form-control"/>
+        </div>
+
+        <div class="form-group">
+          <label>Balance</label>
+          <input type="number" formControlName="balance" />
+        </div>
+
+        <div class="form-group">
+          <label>Currency</label>
+          <input type="text" formControlName="currency" />
+        </div>
+
+      </div>
+
+      <button type="submit">
+        Update Account
+      </button>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh;
+  background: ; */
+}
+
+.card {
+  background: #ffffff;
+  padding: 20px 25px;            /* reduced padding */
+  border-radius: 12px;           /* clean corners (not too round) */
+  width: 650px;                  /* slightly compact */
+  height: auto;                  /* auto height (important) */
+  border: 2px;    /* dark professional border */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+h2 {
+  font-size: 22px;
+  text-align: center;   /* smaller heading */
+  margin-bottom: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 12px;   /* compact labels */
+  font-weight: 600;
+}
+input, select {
+  font-size: 12px;   /* smaller input text */
+  padding: px;      /* reduce height */
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #4facfe;
+  color: white;
+  font-size: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #007bff;
+}
+
+.dropdown {
+  list-style: none;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  background: white;
+}
+
+.dropdown li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background-color: #f0f0f0;
+}
