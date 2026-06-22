@@ -50,6 +50,9 @@ export class AuthLayoutComponent {
         next: (res) => {
           console.log('Login success:', res);
           // localStorage.setItem('token', res.token); // save JWT
+          localStorage.setItem('accessToken', res.accessToken); // save JWT
+          localStorage.setItem('refreshToken', res.refreshToken);
+
           this.authService.setToken(res.token);
           this.authService.setUsername(username);
 
