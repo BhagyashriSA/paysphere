@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+}
+
+/* .beneficiary-container {
+  width: 100%;
+  min-height: 100vh;
+  background: f4f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+} */
+.beneficiary-container {
+  width: 100%;
+  background: #f4f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+   padding: 10px 30px /* top right bottom left */
+}
+
+.beneficiary-card {
+  width: 100%;
+  max-width: 950px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 10px; 
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.header-section {
+  margin-bottom: 30px;
+}
+
+.header-section h2 {
+  font-size: 25px;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.header-section p {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 13px;
+}
+
+input,
+select {
+  height: 30px;          /* reduced from 48px */
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  padding: 0 10px;       /* reduced padding */
+  font-size: 12px;
+  transition: 0.3s;
+  background: #f8fafc;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+}
+
+small {
+  color: #dc2626;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.button-section {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  height: 30px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+   padding: 4px 20px;   /* reduced padding */
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+}
+
+.success-message {
+  height: 30px;          
+  margin-top: 20px;
+  background: #dcfce7;
+  color: #166534;
+  padding: 14px;
+  font-size: 13px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.error-message {
+  height: 30px;          
+  margin-top: 20px;
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 14px;
+  font-size: 13px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+@media(max-width: 768px) {
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+
+  .beneficiary-card {
+    padding: 20px;
+  }
+}

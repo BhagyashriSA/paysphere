@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TransactionsListComponent } from './transactions-list.component';
+import { ViewBeneficiaryComponent } from './view-beneficiary.component';
 
-describe('TransactionsListComponent', () => {
-  let component: TransactionsListComponent;
-  let fixture: ComponentFixture<TransactionsListComponent>;
+describe('ViewBeneficiaryComponent', () => {
+  let component: ViewBeneficiaryComponent;
+  let fixture: ComponentFixture<ViewBeneficiaryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TransactionsListComponent]
+      imports: [ViewBeneficiaryComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TransactionsListComponent);
+    fixture = TestBed.createComponent(ViewBeneficiaryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

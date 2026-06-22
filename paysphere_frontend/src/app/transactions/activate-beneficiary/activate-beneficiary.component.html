@@ -1,0 +1,39 @@
+
+<div class="delete-container">
+
+    <div class="delete-card">
+
+        <h2>Activate Beneficiary</h2>
+
+        <div class="form-group">
+
+            <label>Beneficiary ID</label>
+
+            <input
+                type="number"
+                [(ngModel)]="beneficiaryId"
+                placeholder="Enter beneficiary ID">
+
+        </div>
+
+        <div class="button-group">
+
+            <button
+                class="delete-btn"
+                (click)="activateBeneficiary()">
+
+                Activate
+            </button>
+
+            <button
+                class="cancel-btn"
+                (click)="cancel()">
+
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
