@@ -9,16 +9,45 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
 
   private baseUrl = "http://localhost:8080/auth";
-  
+  private platformId = inject(PLATFORM_ID);
   constructor(private http: HttpClient) {} 
+  
+  getAccessToken() {
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem('accessToken');
+    }
+    return null;
+  }
 
-   private platformId = inject(PLATFORM_ID);
+     getRefreshToken() {
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem('refreshToken');
+    }
+    return null;
+  }
 
-  //  isAuthenticated(): boolean {
-  //   return !!localStorage.getItem('token');
-  // }
+   refreshToken() {
+    return this.http.post<any>(`${this.baseUrl}/refresh`, {
+      refreshToken: this.getRefreshToken()
+    });
+  }
 
-  forgotPassword(data: any) {
+
+   saveTokens(data: any) {
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('accessToken', data.accessToken);
+      localStorage.setItem('refreshToken', data.refreshToken);
+    }
+  }
+
+    isAuthenticated(): boolean {
+    if (isPlatformBrowser(this.platformId)) {
+      return !!localStorage.getItem('accessToken');
+    }
+    return false;
+  }
+
+    forgotPassword(data: any) {
     return this.http.post(`${this.baseUrl}/forgot-password`, data);
   }
 
@@ -26,12 +55,24 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/reset-password`, data);
  }
 
-  isAuthenticated(): boolean {
+    logout(): void {
     if (isPlatformBrowser(this.platformId)) {
-      return !!localStorage.getItem('token');
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
     }
-    return false;
   }
+
+
+  //  isAuthenticated(): boolean {
+  //   return !!localStorage.getItem('token');
+  // }
+
+  // isAuthenticated(): boolean {
+  //   if (isPlatformBrowser(this.platformId)) {
+  //     return !!localStorage.getItem('token');
+  //   }
+  //   return false;
+  // }
 
   getUsername(): string {
     if (isPlatformBrowser(this.platformId)) {
@@ -52,10 +93,10 @@ export class AuthService {
     }
   }
 
-  logout(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('username');
-    }
-  }
+  //  logout(): void {
+  //   if (isPlatformBrowser(this.platformId)) {
+  //     localStorage.removeItem('accessToken');
+  //     localStorage.removeItem('refreshToken');
+  //   }
+  // }
 }
