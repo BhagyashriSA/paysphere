@@ -14,6 +14,13 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { ForgotPasswordComponent } from './users/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './users/reset-password/reset-password.component';
+import { CreateAccountComponent } from './accounts/create-account/create-account.component';
+import { UpdateAccountComponent } from './accounts/update-account/update-account.component';
+import { FetchAccountComponent } from './accounts/fetch-account/fetch-account.component';
+import { AddBeneficiaryComponent } from './transactions/add-beneficiary/add-beneficiary.component';
+import { ViewBeneficiaryComponent } from './transactions/view-beneficiary/view-beneficiary.component';
+import { DeleteBeneficiaryComponent } from './transactions/delete-beneficiary/delete-beneficiary.component';
+import { ActivateBeneficiaryComponent } from './transactions/activate-beneficiary/activate-beneficiary.component';
 
 
 export const routes: Routes = [
@@ -38,7 +45,15 @@ export const routes: Routes = [
       { path: 'transactions', component: TransactionsListComponent },
       { path: 'users/create', component: CreateUserComponent },
       { path: 'users/list', component: UserListComponent },
-      { path: 'edit-user/:id', component: UpdateUserComponent }
+      { path: 'edit-user/:id', component: UpdateUserComponent },
+      { path: 'accounts/create-account', component: CreateAccountComponent },
+      { path: 'accounts/update-account/:id', component: UpdateAccountComponent },
+      { path: 'accounts/fetch-account', component: FetchAccountComponent },
+      { path: 'add-beneficiary', component: AddBeneficiaryComponent },
+      { path: 'view-beneficiary', component: ViewBeneficiaryComponent },
+      { path: 'delete-beneficiary', component: DeleteBeneficiaryComponent },
+      { path: 'activate-beneficiary', component: ActivateBeneficiaryComponent }
+
     ]
   },
 
@@ -51,7 +66,7 @@ export const routes: Routes = [
 //     //   { path: 'footer', component: FooterComponent },
 
 //    // Pages WITH layout
-//   { 
+//   {
 //     path: '',
 //     component: MainLayoutComponent,
 //     children: [
