@@ -18,6 +18,7 @@ public class EmailService {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
+//            helper.setTo("bhagyashrisay@gmail.com");
             helper.setTo(toEmail);
             helper.setSubject("Welcome! Your Account Has Been Created");
 
@@ -51,6 +52,7 @@ public class EmailService {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
+//            helper.setTo("bhagyashrisay@gmail.com");
             helper.setTo(toEmail);
             helper.setSubject("Welcome! Your Account Has Been Updated");
 
@@ -83,6 +85,7 @@ public class EmailService {
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
+//        helper.setTo("bhagyashrisay@gmail.com");
         helper.setTo(toEmail);
         helper.setSubject("Reset Your Password");
 
