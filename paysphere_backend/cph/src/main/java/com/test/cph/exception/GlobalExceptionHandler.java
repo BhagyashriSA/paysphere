@@ -1,5 +1,6 @@
 package com.test.cph.exception;
 
+import com.test.cph.dto.ApiResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -83,5 +84,38 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @ExceptionHandler(AccountCreationException.class)
+    public ResponseEntity<?> handleCustom(AccountCreationException ex) {
+
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ApiResponse<>(ex.getMessage(), null, false));
+    }
+
+    @ExceptionHandler(ResourceAlreadyExistsException.class)
+    public ResponseEntity<?> handleAlreadyExists(ResourceAlreadyExistsException ex) {
+        return buildResponse(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
+    private ResponseEntity<?> buildResponse(HttpStatus status, String message) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("timestamp", LocalDateTime.now());
+        body.put("status", status.value());
+        body.put("message", message);
+        return new ResponseEntity<>(body, status);
+    }
+
+
+
+
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    public ResponseEntity<?> handleValidationExceptions(MethodArgumentNotValidException ex) {
+//        Map<String, String> errors = new HashMap<>();
+//        ex.getBindingResult().getFieldErrors().forEach(error ->
+//                errors.put(error.getField(), error.getDefaultMessage())
+//        );
+//        return ResponseEntity.badRequest().body(errors);
+//    }
+
 
 }
